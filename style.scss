@@ -1,0 +1,315 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body
+{
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+header
+{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+
+    h1{
+        letter-spacing: 20px;
+        font-weight: 300;
+        font-size: clamp(16px, 1.5vw, 2vw);
+    }
+
+    nav ul 
+    {
+        display: flex;
+        list-style: none;
+        gap: 10px;
+        
+        li a{
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+main {
+    overflow-x: hidden;
+    section{
+        height: 100vh;
+        width: 100vw;
+    }
+
+}
+    
+.hero 
+{
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    grid-template-areas: "div1 div3 div3"
+                         "div2 div3 div3";
+    position: relative;
+    
+
+    .div1
+    {
+        grid-area: div1;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            font-size: 30vw;
+            font-weight: 600;
+            top: 0px;
+            right: 15%;
+            z-index: -1;
+            line-height: 0.9;
+            position: absolute;
+        }
+        
+    }
+    .div2
+    {
+        grid-area: div2;
+        
+        padding: 10px 40px;
+
+        h2{
+            font-weight:300;
+            font-size: 2vw;
+            span{
+                font-style: italic;
+            }
+        }
+        button{
+            padding: 10px;
+            border: 1px solid rgba(69, 68, 68, 0.74);
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+    }.div3
+    {
+        grid-area: div3;
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        
+
+        img{
+            
+            height: 45vw;
+            
+            
+        }
+    }
+}
+
+@media(max-width: 768px)
+{
+    header nav 
+    {
+        display: none;
+    }
+    main .hero
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "div1"
+                             "div3"
+                             "div2";
+        .div3{
+            justify-content: end;
+            align-items: center;
+
+        }
+
+}
+}
+
+/* Section mvp*/
+
+
+.mvp
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left-section right-section";
+    padding: 20px;
+    .right-section{
+        
+        grid-area: right-section;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 600px;
+        }
+
+    }
+    .left-section{
+           
+        grid-area: left-section;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "div1 div2 div3"
+                             "div4 div4 div5";
+
+        .div1{
+            
+            grid-area: div1;
+            align-self: end;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+
+            h3{
+                font-size: 50px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.661);
+            }
+            p{
+                font-size: 20px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.616);
+            }
+        }
+        .div2{
+            
+            grid-area: div2;
+            align-self: end;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+
+            h3{
+                font-size: 50px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.661);
+            }
+            p{
+                font-size: 20px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.616);
+            }
+        }
+        .div3{
+            
+            grid-area: div3;
+            align-self: end;
+            text-align: center;
+            padding: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+
+            h3{
+                font-size: 50px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.661);
+            }
+            p{
+                font-size: 20px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.616);
+            }
+        }
+        .div4{
+            
+            grid-area: div4;
+            padding: 10px;
+            
+            
+            
+
+            h3{
+                font-size: 90px;
+                letter-spacing: 50px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.661);
+            }
+            p{
+                font-size: 30px;
+                font-style: italic;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.616);
+                margin-left: 150px;
+            }
+
+            
+        }
+        .div5{
+            
+            grid-area: div5;
+            text-align: center;
+            padding: 10px;
+            align-self: flex-start;
+            border-left: 2px solid rgba(0, 0, 0, 0.1);
+
+
+            h3{
+                font-size: 50px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.661);
+                
+            }
+            p{
+                font-size: 20px;
+                font-weight: 300;
+                color: rgba(0, 0, 0, 0.616);
+            }
+        }
+    }
+}
+
+@media(max-width:768px)
+{
+    .mvp
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: "left-section"
+                             "right-section";
+        .left-section{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas: "div1 div2"
+                                 "div3 div3"
+                                 "div4 div4"
+                                 "div5 div5";
+
+            .div1, .div2, .div3, .div5{
+                border-left: none;
+                align-self: center;
+            }
+            .div4{
+                text-align: center;
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+                h3{
+                    font-size: 70px;
+                    letter-spacing: 20px;
+                }
+                p{
+                    text-align: center;
+                    font-size: 20px;
+                }
+            }
+            
+        }
+        .right-section{
+            img{
+                height: 300px;
+            }
+        }
+    }
+}
