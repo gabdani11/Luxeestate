@@ -106,10 +106,10 @@ main section {
 /* Section mvp*/
 .mvp {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "left-section right-section";
-  padding: 20px;
+  padding: 0px 6vw;
 }
 .mvp .right-section {
   grid-area: right-section;
@@ -119,6 +119,10 @@ main section {
 }
 .mvp .right-section img {
   height: 600px;
+  width: 400px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .mvp .left-section {
   grid-area: left-section;
@@ -246,6 +250,124 @@ main section {
     height: 300px;
   }
 }
+/* Form styles */
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form .main {
+  height: 80%;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #2e292a;
+  display: grid;
+  grid-template-columns: 60% 1fr;
+  grid-template-rows: 1fr 20%;
+  grid-template-areas: "div1 form" "div2 form";
+}
+.form .main .div1 {
+  grid-area: div1;
+  color: white;
+  padding: 100px;
+}
+.form .main .div1 h2 {
+  font-size: 2.5vw;
+  font-weight: 400;
+}
+.form .main .div1 p {
+  margin-top: 5px;
+  font-size: 1vw;
+  font-weight: 300;
+}
+.form .main .div2 {
+  grid-area: div2;
+  display: flex;
+  padding: 0px 100px;
+  align-items: center;
+  gap: 20px;
+}
+.form .main .div2 button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form .main .div2 i {
+  margin: 0px 5px;
+  transition: all 0.3s ease;
+}
+.form .main .div2 button:hover i {
+  font-size: 18px;
+}
+.form .main form {
+  grid-area: form;
+  margin: 20px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 30% 1fr;
+  grid-template-areas: "form-div0 form-div0" "form-div1 form-div2" "form-div3 form-div3" "form-div4 form-div4" "form-div5 form-div5";
+}
+.form .main form .form-div0 {
+  grid-area: form-div0;
+  margin-top: 20px;
+}
+.form .main form div input {
+  width: 100%;
+  height: 50%;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.205);
+  padding: 0px 10px;
+}
+.form .main form div label {
+  font-size: 14px;
+}
+.form .main form .form-div1 {
+  grid-area: form-div1;
+}
+.form .main form .form-div1 input {
+  width: 98%;
+}
+.form .main form .form-div2 {
+  grid-area: form-div2;
+}
+.form .main form .form-div3 {
+  grid-area: form-div3;
+}
+.form .main form .form-div4 {
+  grid-area: form-div4;
+}
+.form .main form .form-div4 textarea {
+  resize: none;
+  width: 100%;
+  height: 80%;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.205);
+  border-radius: 10px;
+}
+.form .main form .form-div5 {
+  grid-area: form-div5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form .main form .form-div5 button {
+  padding: 10px 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2e292a;
+  color: white;
+  cursor: pointer;
+}
+.form .main form .form-div5 button i {
+  margin-right: 5px;
+}
+
 /* Footer styles */
 footer {
   height: 100%;

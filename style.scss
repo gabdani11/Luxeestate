@@ -141,18 +141,23 @@ main {
 .mvp
 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 1fr ;
     grid-template-rows: 1fr;
     grid-template-areas: "left-section right-section";
-    padding: 20px;
+    padding: 0px 6vw;
     .right-section{
         
         grid-area: right-section;
         display: flex;
         justify-content: center;
+        
+        
         align-items: center;
         img{
             height: 600px;
+            width: 400px;
+            border-radius: 10px;
+            object-fit: cover;
         }
 
     }
@@ -313,6 +318,163 @@ main {
         }
     }
 }
+
+/* Form styles */
+.form{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .main{
+        height: 80%;
+        width: 90%;
+        border-radius: 10px;
+        background-color: #2e292a;
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        grid-template-rows: 1fr 20%;
+        grid-template-areas: "div1 form"
+                             "div2 form";
+
+                             
+    
+
+    .div1{
+        grid-area: div1;
+        color: white;
+
+        padding: 100px;
+
+        h2{
+            font-size: 2.5vw;
+            font-weight: 400;
+        }
+        p{
+            margin-top: 5px;
+            font-size: 1vw;
+            font-weight: 300;
+        }
+    }
+    .div2{
+        grid-area: div2;
+        
+        display: flex;
+        padding: 0px 100px;
+        align-items: center;
+        gap: 20px;
+
+        button{
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+
+            
+        }
+        i{
+            margin: 0px 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover i{
+            font-size: 18px;
+            
+            
+            
+        }
+    }
+    form{
+        grid-area: form;
+        margin: 20px;
+        padding: 20px 15px;
+        border-radius: 10px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 30% 1fr;
+        grid-template-areas: "form-div0 form-div0"
+                             "form-div1 form-div2"
+                             "form-div3 form-div3"
+                             "form-div4 form-div4"
+                             "form-div5 form-div5";
+
+        .form-div0{
+            grid-area: form-div0;
+            margin-top: 20px;
+            
+        }
+        div{
+            
+
+            input{
+                width: 100%;
+                height: 50%;
+                margin-top: 5px;
+                border-radius: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.205);
+                padding: 0px 10px;
+                
+            }
+            label
+            {
+                font-size: 14px;
+                
+            }
+            
+        }
+        .form-div1{
+            grid-area: form-div1;
+            input{
+                
+                width: 98%;
+            }
+        }
+        .form-div2{
+            grid-area: form-div2;
+        }
+        .form-div3{
+            grid-area: form-div3;
+        }
+        .form-div4{
+            grid-area: form-div4;
+
+            textarea{
+                resize: none;
+                width: 100%;
+                height: 80%;
+                margin-top: 5px;
+                padding: 10px;
+                border: 1px solid rgba(0, 0, 0, 0.205);
+                border-radius: 10px;
+            }
+        }
+        .form-div5{
+            grid-area: form-div5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button{
+                padding: 10px 50px;
+                border-radius: 10px;
+                border: none;
+                background-color: #2e292a;
+                color: white;
+                cursor: pointer;
+
+
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+    }
+}
+}
+
+
 
 /* Footer styles */
 footer{
