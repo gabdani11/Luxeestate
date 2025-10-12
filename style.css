@@ -68,7 +68,7 @@ main section {
 }
 .hero .div2 h2 {
   font-weight: 300;
-  font-size: 2vw;
+  font-size: clamp(24px, 2vw, 2.5vw);
 }
 .hero .div2 h2 span {
   font-style: italic;
@@ -222,6 +222,7 @@ main section {
 @media (max-width: 768px) {
   .mvp {
     grid-template-columns: 1fr;
+    padding: 0px;
     grid-template-rows: auto auto;
     grid-template-areas: "left-section" "right-section";
   }
@@ -251,12 +252,12 @@ main section {
   }
 }
 /* Form styles */
-.form {
+.form-section {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.form .main {
+.form-section .main {
   height: 80%;
   width: 90%;
   border-radius: 10px;
@@ -266,41 +267,41 @@ main section {
   grid-template-rows: 1fr 20%;
   grid-template-areas: "div1 form" "div2 form";
 }
-.form .main .div1 {
+.form-section .main .div1 {
   grid-area: div1;
   color: white;
   padding: 100px;
 }
-.form .main .div1 h2 {
-  font-size: 2.5vw;
+.form-section .main .div1 h2 {
+  font-size: clamp(24px, 2.5vw, 3vw);
   font-weight: 400;
 }
-.form .main .div1 p {
+.form-section .main .div1 p {
   margin-top: 5px;
-  font-size: 1vw;
+  font-size: clamp(14px, 1.1vw, 18px);
   font-weight: 300;
 }
-.form .main .div2 {
+.form-section .main .div2 {
   grid-area: div2;
   display: flex;
   padding: 0px 100px;
   align-items: center;
   gap: 20px;
 }
-.form .main .div2 button {
+.form-section .main .div2 button {
   padding: 10px 30px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.form .main .div2 i {
+.form-section .main .div2 i {
   margin: 0px 5px;
   transition: all 0.3s ease;
 }
-.form .main .div2 button:hover i {
+.form-section .main .div2 button:hover i {
   font-size: 18px;
 }
-.form .main form {
+.form-section .main form {
   grid-area: form;
   margin: 20px;
   padding: 20px 15px;
@@ -311,11 +312,11 @@ main section {
   grid-template-rows: 1fr 1fr 1fr 30% 1fr;
   grid-template-areas: "form-div0 form-div0" "form-div1 form-div2" "form-div3 form-div3" "form-div4 form-div4" "form-div5 form-div5";
 }
-.form .main form .form-div0 {
+.form-section .main form .form-div0 {
   grid-area: form-div0;
   margin-top: 20px;
 }
-.form .main form div input {
+.form-section .main form div input {
   width: 100%;
   height: 50%;
   margin-top: 5px;
@@ -323,25 +324,25 @@ main section {
   border: 1px solid rgba(0, 0, 0, 0.205);
   padding: 0px 10px;
 }
-.form .main form div label {
+.form-section .main form div label {
   font-size: 14px;
 }
-.form .main form .form-div1 {
+.form-section .main form .form-div1 {
   grid-area: form-div1;
 }
-.form .main form .form-div1 input {
+.form-section .main form .form-div1 input {
   width: 98%;
 }
-.form .main form .form-div2 {
+.form-section .main form .form-div2 {
   grid-area: form-div2;
 }
-.form .main form .form-div3 {
+.form-section .main form .form-div3 {
   grid-area: form-div3;
 }
-.form .main form .form-div4 {
+.form-section .main form .form-div4 {
   grid-area: form-div4;
 }
-.form .main form .form-div4 textarea {
+.form-section .main form .form-div4 textarea {
   resize: none;
   width: 100%;
   height: 80%;
@@ -350,13 +351,13 @@ main section {
   border: 1px solid rgba(0, 0, 0, 0.205);
   border-radius: 10px;
 }
-.form .main form .form-div5 {
+.form-section .main form .form-div5 {
   grid-area: form-div5;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form .main form .form-div5 button {
+.form-section .main form .form-div5 button {
   padding: 10px 50px;
   border-radius: 10px;
   border: none;
@@ -364,8 +365,26 @@ main section {
   color: white;
   cursor: pointer;
 }
-.form .main form .form-div5 button i {
+.form-section .main form .form-div5 button i {
   margin-right: 5px;
+}
+@media (max-width: 768px) {
+  .form-section .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "div1" "form" "div2";
+  }
+  .form-section .main .div1 {
+    padding: 20px;
+  }
+  .form-section .main .div2 {
+    justify-content: center;
+    padding: 0px;
+    flex-direction: column;
+  }
+  .form-section .main form {
+    padding: 0px 15px;
+  }
 }
 
 /* Footer styles */
@@ -433,7 +452,7 @@ footer .contact .div2 {
   align-items: center;
 }
 footer .contact .div2 h6 {
-  font-size: 1.1vw;
+  font-size: clamp(14px, 1.1vw, 18px);
   font-weight: 400;
 }
 footer .contact .div2 ul {
@@ -457,7 +476,7 @@ footer .contact .div3 {
   padding: 25px;
 }
 footer .contact .div3 h6 {
-  font-size: 1.1vw;
+  font-size: clamp(14px, 1.1vw, 18px);
   font-weight: 400;
 }
 footer .contact .div3 p {
@@ -493,7 +512,6 @@ footer .contact .div5 {
 footer .contact .div5 ul {
   display: flex;
   gap: 25px;
-  justify-content: end;
   align-items: center;
 }
 footer .contact .div5 ul li {
@@ -506,7 +524,7 @@ footer .contact .div5 ul li {
     height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: 10% auto auto auto auto;
-    grid-template-areas: "div1" "div2" "div3" "div4" "div5";
+    grid-template-areas: "div1" "div2" "div3" "div5" "div4";
   }
   footer .contact .div2, footer .contact .div3, footer .contact .div4, footer .contact .div5 {
     text-align: center;
@@ -514,7 +532,7 @@ footer .contact .div5 ul li {
   footer .contact .div2 ul {
     justify-content: center;
   }
-  footer .contact .div5 ul {
+  footer .contact .div5 {
     justify-content: center;
   }
   footer .contact .div1 h1 {
@@ -530,4 +548,133 @@ footer .contact .div5 ul li {
   footer .buy-properties {
     display: none;
   }
+}
+/* Q&A Section */
+.FAQ {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 20% 1fr;
+  grid-template-areas: "heading house" "question house";
+}
+.FAQ .heading {
+  grid-area: heading;
+  display: flex;
+  align-items: center;
+  padding: 0px 50px;
+}
+.FAQ .question {
+  grid-area: question;
+  padding: 0px 50px;
+}
+.FAQ .question .box {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.FAQ .question .box div {
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  padding: 10px 10px 10px 0px;
+  transition: flex-grow 0.8s ease, color 0.8s ease;
+  border-bottom: 2px solid rgba(69, 68, 68, 0.74);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.FAQ .question .box div p {
+  position: absolute;
+  transform: translateY(30px);
+  font-size: 14px;
+  font-weight: 400;
+}
+.FAQ .question .box div:hover {
+  flex-grow: 2;
+  align-items: start;
+  background-color: black;
+  color: white;
+}
+.FAQ .house {
+  grid-area: house;
+  background: url(https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*Interior MVP Section*/
+.interior-mvp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "div1 div2 div3 div4";
+  padding: 10px 20px;
+}
+.interior-mvp div {
+  padding: 0px 5px;
+}
+.interior-mvp div h5 {
+  border-top: 2px solid #2e292a;
+  padding: 10px 0px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+.interior-mvp .div1 {
+  grid-area: div1;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding-bottom: 25px;
+}
+.interior-mvp .div1 img {
+  width: 100%;
+  height: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 10px;
+}
+.interior-mvp .div2 {
+  grid-area: div2;
+}
+.interior-mvp .div2 p {
+  font-size: 15px;
+}
+.interior-mvp .div2 button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border-radius: 20px;
+  margin-top: 20px;
+  border: 1px solid rgba(69, 68, 68, 0.74);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.interior-mvp .div2 button:hover {
+  background-color: #2e292a;
+  color: white;
+}
+.interior-mvp .div3 {
+  grid-area: div3;
+}
+.interior-mvp .div3 img {
+  width: 100%;
+  height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 10px;
+}
+.interior-mvp .div4 {
+  grid-area: div4;
+}
+.interior-mvp .div4 img {
+  width: 100%;
+  height: 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 10px;
 }

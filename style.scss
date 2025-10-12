@@ -85,7 +85,7 @@ main {
 
         h2{
             font-weight:300;
-            font-size: 2vw;
+            font-size: clamp(24px, 2vw, 2.5vw);
             span{
                 font-style: italic;
             }
@@ -282,6 +282,7 @@ main {
     .mvp
     {
         grid-template-columns: 1fr;
+        padding: 0px;
         grid-template-rows: auto auto;
         grid-template-areas: "left-section"
                              "right-section";
@@ -320,7 +321,7 @@ main {
 }
 
 /* Form styles */
-.form{
+.form-section{
     
     display: flex;
     align-items: center;
@@ -347,12 +348,12 @@ main {
         padding: 100px;
 
         h2{
-            font-size: 2.5vw;
+            font-size: clamp(24px, 2.5vw, 3vw);
             font-weight: 400;
         }
         p{
             margin-top: 5px;
-            font-size: 1vw;
+            font-size: clamp(14px, 1.1vw, 18px);
             font-weight: 300;
         }
     }
@@ -472,7 +473,31 @@ main {
 
     }
 }
+@media(max-width:768px){
+    
+        .main{
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "div1"
+                                 "form"
+                                 "div2";
+
+            .div1{
+                padding: 20px;
+            }
+            .div2{
+                justify-content: center;
+                padding: 0px;
+                flex-direction: column;
+            }
+            form{
+                padding: 0px 15px;
+            }
+        }
+    
 }
+}
+
 
 
 
@@ -547,7 +572,7 @@ footer{
             align-items: center;
 
             h6{
-                font-size: 1.1vw;
+                font-size: clamp(14px, 1.1vw, 18px);
                 font-weight: 400;
             }
 
@@ -576,7 +601,7 @@ footer{
 
             
             h6{
-                font-size: 1.1vw;
+                font-size: clamp(14px, 1.1vw, 18px);
                 font-weight: 400;
             }
             p{
@@ -614,8 +639,8 @@ footer{
             ul{
                 display: flex;
                 gap: 25px;
-                justify-content: end;
                 align-items: center;
+                
                 
                 li{
                     list-style: none;
@@ -638,17 +663,18 @@ footer{
             grid-template-areas: "div1"
                                  "div2"
                                  "div3"
-                                 "div4"
-                                 "div5";
+                                 "div5"
+                                 "div4";
              .div2, .div3, .div4, .div5{
                 text-align: center;
             }   
             .div2 ul{
                 justify-content: center;
             }
-            .div5 ul{
+            .div5{
                 justify-content: center;
             }
+            
             .div1 h1{
                 font-size: 20px;
                 letter-spacing: 10px;
@@ -665,6 +691,150 @@ footer{
         .buy-properties
         {
             display: none;
+        }
+    }
+}
+
+/* Q&A Section */
+
+.FAQ
+{
+    display:grid;
+    
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20% 1fr;
+    grid-template-areas: "heading house"
+                         "question house";
+
+    
+    .heading{
+        grid-area:heading;
+        display: flex;
+        align-items: center;
+        padding: 0px 50px;
+    }                        
+    .question{
+        grid-area:question;
+        padding: 0px 50px;
+
+        .box{
+            height: 60%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            div{
+                flex-grow: 1;
+                display: flex;
+                align-items: end;
+                padding:10px 10px 10px 0px;
+                
+                transition: flex-grow 0.8s ease, color 0.8s ease;
+                border-bottom: 2px solid rgba(69, 68, 68, 0.74);
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+
+                p{
+                    position: absolute;
+                    transform: translateY(30px);
+                    font-size: 14px;
+                    font-weight: 400
+
+                }
+
+            }
+            div:hover{
+                flex-grow: 2;
+                align-items: start;
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+    .house{
+        grid-area:house;
+        background:url(https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg)no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/*Interior MVP Section*/
+
+.interior-mvp{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "div1 div2 div3 div4";
+    padding: 10px 20px;
+
+    div{
+        padding: 0px 5px;
+
+        h5{
+            border-top: 2px solid #2e292a;
+            padding: 10px 0px;
+            margin-top: 10px;
+            font-weight: 400;
+
+        }
+
+    }
+    .div1{
+        grid-area: div1;
+        display: flex;
+        justify-content: end;
+        flex-direction: column;
+        padding-bottom: 25px;
+        img{
+            width: 100%;
+            height: 40%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+    }
+    .div2{
+        grid-area: div2;
+
+        p{
+            font-size: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: transparent;
+            border-radius: 20px;
+            margin-top: 20px;
+            border: 1px solid rgba(69, 68, 68, 0.74);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover{
+            background-color: #2e292a;
+            color: white;
+        }
+    }
+    .div3{
+        grid-area: div3;
+
+        img{
+            width: 100%;
+            height: 90%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+    }
+    .div4{
+        grid-area: div4;
+        img{
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
         }
     }
 }
