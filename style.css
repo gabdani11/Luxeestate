@@ -246,3 +246,166 @@ main section {
     height: 300px;
   }
 }
+/* Footer styles */
+footer {
+  height: 100%;
+  width: 100%;
+  background: url(./bg-footer.jpg) no-repeat;
+  background-size: cover;
+  background-position: top;
+  padding: 30px;
+  display: flex;
+  align-items: end;
+  overflow: hidden;
+  position: relative;
+}
+footer button {
+  padding: 10px 30px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  position: absolute;
+  transition: all 0.4s ease;
+}
+footer button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+footer .contact-us {
+  top: 3%;
+  right: 40%;
+}
+footer .sell-properties {
+  top: 40%;
+  right: 80%;
+}
+footer .buy-properties {
+  top: 35%;
+  right: 20%;
+}
+footer .contact {
+  height: 40%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40% 1fr 1fr;
+  grid-template-rows: 1fr 10%;
+  grid-template-areas: "div1 div2 div3" "div4 div4 div5";
+  background-color: white;
+  border-radius: 10px;
+}
+footer .contact .div1 {
+  grid-area: div1;
+  padding: 20px 10px;
+}
+footer .contact .div1 h1 {
+  font-size: 1.3vw;
+  font-weight: 400;
+  letter-spacing: 50px;
+}
+footer .contact .div2 {
+  grid-area: div2;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .contact .div2 h6 {
+  font-size: 1.1vw;
+  font-weight: 400;
+}
+footer .contact .div2 ul {
+  margin-top: 30px;
+}
+footer .contact .div2 ul li {
+  list-style: none;
+  text-decoration: none;
+}
+footer .contact .div2 ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+footer .contact .div2 ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+footer .contact .div3 {
+  grid-area: div3;
+  padding: 25px;
+}
+footer .contact .div3 h6 {
+  font-size: 1.1vw;
+  font-weight: 400;
+}
+footer .contact .div3 p {
+  margin-top: 50px;
+  font-size: 15px;
+}
+footer .contact .div3 a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+footer .contact .div3 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+footer .contact .div4 {
+  grid-area: div4;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+footer .contact .div4 p {
+  font-size: 14px;
+  font-weight: 300;
+}
+footer .contact .div5 {
+  grid-area: div5;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: end;
+}
+footer .contact .div5 ul {
+  display: flex;
+  gap: 25px;
+  justify-content: end;
+  align-items: center;
+}
+footer .contact .div5 ul li {
+  list-style: none;
+  font-size: 14px;
+}
+
+@media (max-width: 763px) {
+  footer .contact {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10% auto auto auto auto;
+    grid-template-areas: "div1" "div2" "div3" "div4" "div5";
+  }
+  footer .contact .div2, footer .contact .div3, footer .contact .div4, footer .contact .div5 {
+    text-align: center;
+  }
+  footer .contact .div2 ul {
+    justify-content: center;
+  }
+  footer .contact .div5 ul {
+    justify-content: center;
+  }
+  footer .contact .div1 h1 {
+    font-size: 20px;
+    letter-spacing: 10px;
+  }
+  footer .contact-us {
+    display: none;
+  }
+  footer .sell-properties {
+    display: none;
+  }
+  footer .buy-properties {
+    display: none;
+  }
+}
