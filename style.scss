@@ -403,6 +403,26 @@ main {
         display: none;
     }
 }
+@media(max-width:768px){
+    .cards{
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 10% 1fr;
+        grid-template-areas: "div1"
+                             "div2"
+                             "div3";
+        .div3{
+            
+            div{
+                width: 40%;
+                height: 40%;
+
+                p{
+                    margin-left: 10px;
+                }
+            }
+        }           
+    }
+}
 
 /* Form styles */
 .form-section{
@@ -825,7 +845,8 @@ footer{
                     position: absolute;
                     transform: translateY(30px);
                     font-size: 14px;
-                    font-weight: 400
+                    font-weight: 400;
+                    color: white;
 
                 }
 
@@ -843,6 +864,28 @@ footer{
         background:url(https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg)no-repeat;
         background-position: center;
         background-size: cover;
+    }
+}
+@media(max-width:768px){
+    .FAQ{
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 30% 1fr;
+        grid-template-areas: "heading"
+                             "house"
+                             "question";
+                             
+        .house{
+            height: 100%;
+            
+        }
+        .question{
+            
+            .box{
+                
+                height: 90%;
+                
+            }
+        }
     }
 }
 
@@ -892,7 +935,7 @@ footer{
             padding: 10px 20px;
             background-color: transparent;
             border-radius: 20px;
-            margin-top: 20px;
+            margin:20px 0px;
             border: 1px solid rgba(69, 68, 68, 0.74);
             cursor: pointer;
             transition: all 0.3s ease;
@@ -922,5 +965,39 @@ footer{
             object-position: center;
             border-radius: 10px;
         }
+    }
+}
+@media(max-width:768px){
+    .interior-mvp{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "div1"
+                             "div2"
+                             "div3"
+                             "div4";
+        padding: 0px 0px;
+        height: 200vh;
+
+       
+        
+        .div1{
+            justify-content: start;
+            
+            img{
+                height: 100%;
+                width: 50%;
+            }
+        }
+        .div3{
+            img{
+                height: 50%;
+            }
+        }
+        .div4{
+            img{
+                height: 50%;
+            }
+        }
+        
     }
 }
