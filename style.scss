@@ -609,7 +609,7 @@ main {
 footer{
     height: 100%;
     width: 100%;
-    background: url(./bg-footer.jpg)no-repeat;
+    background: url(./bg-footer.webp)no-repeat;
     background-size: cover;
     background-position:top;
     padding: 30px;
@@ -801,7 +801,7 @@ footer{
     }
 }
 
-/* Q&A Section */
+/* FAQ Section */
 
 .FAQ
 {
@@ -861,7 +861,7 @@ footer{
     }
     .house{
         grid-area:house;
-        background:url(https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg)no-repeat;
+        background:url(./FAQ\ image.webp)no-repeat;
         background-position: center;
         background-size: cover;
     }

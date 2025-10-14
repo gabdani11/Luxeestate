@@ -483,7 +483,7 @@ main section {
 footer {
   height: 100%;
   width: 100%;
-  background: url(./bg-footer.jpg) no-repeat;
+  background: url(./bg-footer.webp) no-repeat;
   background-size: cover;
   background-position: top;
   padding: 30px;
@@ -644,7 +644,7 @@ footer .contact .div5 ul li {
     right: 10%;
   }
 }
-/* Q&A Section */
+/* FAQ Section */
 .FAQ {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -693,7 +693,7 @@ footer .contact .div5 ul li {
 }
 .FAQ .house {
   grid-area: house;
-  background: url(https://images.pexels.com/photos/358636/pexels-photo-358636.jpeg) no-repeat;
+  background: url(./FAQ\ image.webp) no-repeat;
   background-position: center;
   background-size: cover;
 }
