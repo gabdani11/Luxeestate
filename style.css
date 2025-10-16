@@ -346,8 +346,8 @@ main section {
 /* Form styles */
 .form-section {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .form-section .main {
   height: 80%;

@@ -12,7 +12,11 @@ html, body
     scroll-behavior: smooth;
 
 }
-
+@mixin flex-center($justify: center, $align: center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
 header
 {
     
@@ -71,11 +75,9 @@ main {
     {
         grid-area: div1;
     
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-center();
 
-        h1{
+        h1{ 
             font-size: 30vw;
             font-weight: 600;
             top: 0px;
@@ -157,11 +159,7 @@ main {
     .right-section{
         
         grid-area: right-section;
-        display: flex;
-        justify-content: center;
-        
-        
-        align-items: center;
+        @include flex-center();
         img{
             height: 600px;
             width: 400px;
@@ -346,9 +344,7 @@ main {
     }
     .div2{
         grid-area: div2;
-        display: flex;
-        justify-content: center;
-        align-items: start;
+        @include flex-center($align:start);
         flex-direction: column;
         gap: 10px;
         color: rgba(0, 0, 0, 0.616);
@@ -427,9 +423,7 @@ main {
 /* Form styles */
 .form-section{
     
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center();
 
     .main{
         height: 80%;
@@ -556,9 +550,7 @@ main {
         }
         .form-div5{
             grid-area: form-div5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex-center();
 
             button{
                 padding: 10px 50px;
